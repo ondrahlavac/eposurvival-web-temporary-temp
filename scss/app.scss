@@ -1,0 +1,434 @@
+@import "settings";
+// @import "foundation";
+
+// Or selectively include components
+@import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+  "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+  "foundation/components/forms",
+  "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+  "foundation/components/top-bar",
+  "foundation/components/type",
+//   "foundation/components/offcanvas",
+  "foundation/components/visibility";
+
+// We use these as default colors throughout
+$main-color: #ff794a;
+$subsidiary-color: #ffdf8f;
+
+// Transform text to uppercase on h1-h6 headers and buttons
+h1, h2, h3, h4, h5, h6,
+.button {
+  text-transform: uppercase;
+}
+
+// If background color is dark, let the h1-h6 headers inherit the section color
+.has-colored-bg {
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+  }
+}
+
+// Add shadow effects on the buttons
+.button {
+  text-shadow: 0 1px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 0 rgba(0,0,0,.1), inset 0 -3px 0 rgba(0,0,0,.05);
+}
+
+// Tighten up margins by removing bottom margins from the last paragraphs
+p:last-child {
+  margin-bottom: 0;
+}
+
+input[type="text"], input[type="email"], textarea {
+  height: 3rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border-radius: $global-radius;
+}
+
+// Use this class to add a significant white space above elements
+.space-up {
+  margin-top: 30px;
+
+  // Increase the space on medium screens and up
+  @media only screen and (min-width: 40.063em) {
+    margin-top: 60px;
+  }
+}
+
+
+// Header
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.header {
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: rem-calc(20 0);
+  font-family: $header-font-family;
+  background: #fff;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,.05);
+  -webkit-backface-visibility: hidden;
+  z-index: 99;
+
+  .logo {
+    img {
+      float: left;
+      margin: 0;
+      width: auto;
+      height: rem-calc(60);
+      border-radius: $global-rounded;
+    }
+    span {
+      float: left;
+      margin: rem-calc(11 0 0 10);
+      font-size: rem-calc(18);
+      line-height: 1;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $header-font-color;
+    }
+  }
+
+  .tagline {
+    float: right;
+    margin: rem-calc(13 0);
+    font-size: rem-calc(14);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .button {
+    float: right;
+    margin: rem-calc(0 0 0 25);
+    padding-top: rem-calc(13);
+    height: rem-calc(40);
+    font-size: rem-calc(14);
+    line-height: 1;
+  }
+}
+
+
+// Banner
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.banner {
+  position: relative;
+  padding: rem-calc(40 0 50);
+  text-align: center;
+  color: #fff;
+  background-color: $main-color;
+
+  h1 {
+    margin-bottom: rem-calc(20);
+  }
+
+  .lead {
+    margin-bottom: rem-calc(30);
+    color: $subsidiary-color;
+  }
+
+  .scroll-down-btn {
+    display: block;
+    margin: rem-calc(30) auto 0;
+    padding-top: rem-calc(5);
+    width: rem-calc(56);
+    height: rem-calc(56);
+    font-size: rem-calc(30);
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: $global-rounded;
+    transition: .35s ease-in-out;
+
+    &:hover {
+      color: #ffdf8f;
+      border-color: #ffdf8f;
+    }
+  }
+
+  @media only screen and (min-width: 40.063em) {
+    padding: rem-calc(86 0 100);
+
+    .lead {
+      margin-bottom: rem-calc(60);
+    }
+
+    .scroll-down-btn {
+      margin-top: rem-calc(60);
+    }
+  }
+}
+
+
+// Section
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.section {
+  padding: rem-calc(44 0 50);
+
+  @media only screen and (min-width: 40.063em) {
+    padding: rem-calc(91 0 100);
+  }
+}
+
+
+// Services
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.services {
+  border-bottom: 2px solid $secondary-color;
+}
+
+// Round Icon
+.round-icon {
+  display: table;
+  width: rem-calc(100);
+  height: rem-calc(100);
+  margin: 0 auto rem-calc(16);
+  font-size: rem-calc(48);
+  background-color: $subsidiary-color;
+  border-radius: $global-rounded;
+
+  span {
+    display: table-cell;
+    vertical-align: middle;
+    color: $main-color;
+    text-align: center;
+  }
+}
+
+// CTA Header
+.cta-header {
+  position: relative;
+  margin-top: rem-calc(50);
+  margin-bottom: rem-calc(15);
+  padding-top: rem-calc(50);
+  text-transform: none;
+
+  &:before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 50%;
+    width: rem-calc(80);
+    height: rem-calc(2);
+    margin-left: rem-calc(-40);
+    background-color: $secondary-color;
+  }
+}
+
+
+// Work
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.project {
+  .project-desc {
+    padding: rem-calc(20 20 0);
+
+    h5 + p {
+      font-size: rem-calc(14);
+      text-transform: uppercase;
+
+      &:before {
+        content: "(";
+        speak: none;
+      }
+
+      &:after {
+        content: ")";
+        speak: none;
+      }
+    }
+  }
+}
+
+
+// Stats
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.stats {
+  padding: rem-calc(20 0 50);
+  text-align: center;
+  color: #fff;
+  background-color: $primary-color;
+
+  h6 {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  @media only screen and (min-width: 40.063em) {
+    padding: rem-calc(100 0 100);
+  }
+}
+
+// Number circle
+.number-circle {
+  display: table;
+  width: rem-calc(80);
+  height: rem-calc(80);
+  margin: rem-calc(30) auto rem-calc(16);
+  font-size: rem-calc(36);
+  line-height: 1;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: $global-rounded;
+
+  span {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: $header-font-family;
+    color: inherit;
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 40.063em) {
+    margin-top: 0;
+    width: rem-calc(160);
+    height: rem-calc(160);
+    font-size: rem-calc(72);
+  }
+}
+
+
+// Testimonials
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Quote component for wrapping a testimonial
+.quote {
+  padding: rem-calc(20);
+  text-align: center;
+  background: $secondary-color;
+  border-radius: $global-radius;
+
+  blockquote {
+    &:before {
+      content: open-quote;
+    }
+    &:after {
+      content: close-quote;
+    }
+  }
+
+  .quote-avatar {
+    width: rem-calc(80);
+    height: rem-calc(80);
+    margin: 0 auto rem-calc(10);
+    background-color: $subsidiary-color;
+    border: 2px solid $main-color;
+    border-radius: $global-rounded;
+  }
+
+  cite {
+    font-size: $blockquote-cite-font-size;
+    font-weight: normal;
+
+    span {
+      font-family: $header-font-family;
+    }
+  }
+}
+
+
+// Contacts
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+.contact {
+  text-align: center;
+  color: #fff;
+  background-color: $main-color;
+
+  .contact-icon {
+    margin-bottom: rem-calc(15);
+  }
+
+  a {
+    padding-bottom: rem-calc(2);
+    color: inherit;
+    border-bottom: 1px dotted #fff;
+
+    &:hover {
+      border-bottom-style: solid;
+    }
+  }
+}
+
+// Footer
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+footer {
+  padding: rem-calc(50 0);
+  font-family: $header-font-family;
+  text-align: center;
+  background-color: #fff;
+
+  p {
+    margin: 0;
+    font-size: rem-calc(13);
+    line-height: 1;
+  }
+
+  @media only screen and (min-width: 40.063em) {
+    padding: rem-calc(100 0);
+
+    p {
+      float: left;
+      margin: rem-calc(6 0 0);
+    }
+  }
+}
+
+.social {
+  margin: rem-calc(0 0 30);
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+
+    a {
+      margin: rem-calc(0 10);
+      padding: rem-calc(10 0 10);
+      color: $body-font-color;
+      transition: .35s ease-in-out;
+
+      &:hover {
+        color: scale-color($body-font-color, $lightness: -14%)
+      }
+    }
+  }
+
+  @media only screen and (min-width: 40.063em) {
+    float: right;
+    margin: 0;
+  }
+}

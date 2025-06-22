@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <title>iframe testing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="client-iframe-script.js"></script>
+    </head>
+    <body>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuButtonOpen = document.getElementById('mobile-menu-open');
+                const menuButtonClose = document.getElementById('mobile-menu-close');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                menuButtonOpen.addEventListener('click', () => {
+                    mobileMenu.style.display = 'block'; 
+                });
+
+                menuButtonClose.addEventListener('click', () => {
+                    mobileMenu.style.display = 'none'; 
+                });
+            });
+        </script>
+        <header class="absolute inset-x-0 top-0 z-50">
+            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+              <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                  <span class="sr-only">Your Company</span>
+                  <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                </a>
+              </div>
+              <div class="flex lg:hidden">
+                <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" id="mobile-menu-open">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                </button>
+              </div>
+              <div class="hidden lg:flex lg:gap-x-12">
+                <a href="//eposurvival.cz/registrace-master.html" class="text-sm font-semibold leading-6 text-gray-900">EPO Registrace</a>
+                <a href="//eposurvival.cz/startovka.html" class="text-sm font-semibold leading-6 text-gray-900">EPO Startovka</a>
+                <a href="http://trailmaniacs.cz/registrace/" class="text-sm font-semibold leading-6 text-gray-900">TM Registrace</a>
+                <a href="http://trailmaniacs.cz/prihlaseni-zavodnici/" class="text-sm font-semibold leading-6 text-gray-900">TM Startovka</a>
+              </div>
+              <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="https://github.com/ondrahlavac/dynamic-iframe-resizing" class="text-sm font-semibold leading-6 text-gray-900">See it on GitHub <span aria-hidden="true">&rarr;</span></a>
+              </div>
+            </nav>
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div class="lg:hidden" role="dialog" aria-modal="true" id="mobile-menu" style="display: none;"> 
+              <!-- Background backdrop, show/hide based on slide-over state. -->
+              <div class="fixed inset-0 z-50"></div>
+              <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="flex items-center justify-between">
+                  <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Ondřej Hlaváč</span>
+                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                  </a>
+                  <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" id="mobile-menu-close">
+                    <span class="sr-only">Close menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="mt-6 flow-root">
+                  <div class="-my-6 divide-y divide-gray-500/10">
+                    <div class="space-y-2 py-6">
+                      <a href="https://eposurvival.cz/registrace-master.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">EPO Registrace</a>
+                      <a href="https://eposurvival.cz/startovka.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">EPO Startovka</a>
+                      <a href="http://trailmaniacs.cz/registrace/" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">TM Registrace</a>
+                      <a href="http://trailmaniacs.cz/prihlaseni-zavodnici/" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">TM Startovka</a>
+                    </div>
+                    <div class="py-6">
+                      <a href="https://github.com/ondrahlavac/dynamic-iframe-resizing" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">See it on GitHub</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </header>         
+
+        <div class="bg-white py-24 sm:py-32">
+
+          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+              <div class="mx-auto max-w-2xl sm:text-center">
+                <h2 class="text-base font-semibold leading-7 text-indigo-600">Integrating via iframe</h2>
+                <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Iframe changing sizes? No problem.</p>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Thanks to same-origin policy, one cannot access or manipulate the DOM of the iframe content from your parent page if the iframe is loading content from a different domain.
+                    Without access to the iframe's content, you cannot determine its height to adjust the iframe accordingly.</p>
+              </div>
+            </div>
+
+            <div class="relative overflow-hidden pt-16">
+              <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <iframe src="cross-origin-iframe.html" width="100%" class="mb-20 rounded-xl shadow-2xl ring-1 ring-gray-900/10"></iframe>
+              </div>
+            </div>           
+
+            <div class="mx-auto mt-16 max-w-none sm:mt-20 sm:max-w-4xl lg:mt-24 lg:max-w-7xl px-6 lg:px-8">
+              <dl class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                <div class="relative pl-16">
+                  <dt class="text-base font-semibold leading-7 text-gray-900">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                      <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                      </svg>
+                    </div>
+                    Customer edits
+                  </dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-600">On the customers side, the update to the website can be as easy or as complicated as the client needs. But the simplest solution is only 8 lines of code.</dd>
+<pre class="bg-slate-900 rounded-lg mt-6 p-4 text-stone-300 text-xs overflow-auto"><code>&lt;script&gt;
+  document.addEventListener('DOMContentLoaded', function () {
+    
+    const iframeElement = document.querySelector('iframe');
+    
+    // listen for the message event and resize the iframe to the height of the inner content
+    window.addEventListener('message', function(event) {
+      if (event.data.height !== undefined) {
+        iframeElement.style.height = event.data.height
+      }
+    });
+
+  });
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="relative pl-16">
+                  <dt class="text-base font-semibold leading-7 text-gray-900">
+                    <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                      <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                      </svg>
+                    </div>
+                    Content provider update
+                  </dt>
+                  <dd class="mt-2 text-base leading-7 text-gray-600">There's really not much to it. Just one variable, two functions, init call and observer. Something changed? How tall are we? Send it upwards! All in plain vanilla JavaScript.</dd>
+<pre class="bg-slate-900 rounded-lg mt-6 p-4 text-stone-300 text-xs overflow-auto"><code>&lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function () {
+        var lastSentScrollHeight = 0;
+
+        // send the current scroll height of the page to its parent window.
+        function sendHeightToParent( scrollHeight ) {
+            if (scrollHeight !== lastSentScrollHeight) {
+                const data = { height: scrollHeight };
+                lastSentScrollHeight = scrollHeight; // cache
+                window.parent.postMessage(data, '*');
+            }
+        }
+
+        // measure minimum necessary page height by including an element
+        // as the last child of the body and then getting it's offsetTop.
+        function measurePageHeight() {
+            const testDiv = document.createElement('div');
+            testDiv.setAttribute('style', 'clear:both;'); // last element on page
+            document.body.appendChild(testDiv);
+            const measuredOffsetTop = testDiv.offsetTop;
+            document.body.removeChild(testDiv);
+            return measuredOffsetTop;
+        }
+
+        // send initial height
+        sendHeightToParent(document.body.scrollHeight);
+
+        // observe for window resize to determine the new height
+        const resizeObserver = new ResizeObserver(entries => {
+            sendHeightToParent(measurePageHeight());
+        });
+        resizeObserver.observe(document.body);
+    });
+&lt;/script&gt;</code></pre>
+                </div>
+              </dl>
+            </div>
+
+          </div>
+ 
+          <!-- Footer -->
+          <footer class="bg-white">
+            <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+              <div class="flex justify-center space-x-6 md:order-2">
+                <a href="https://github.com/ondrahlavac/dynamic-iframe-resizing" class="text-gray-400 hover:text-gray-500">
+                  <span class="sr-only">GitHub</span>
+                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+              <div class="mt-8 md:order-1 md:mt-0">
+                <p class="text-center text-xs leading-5 text-gray-500" xmlns:cc="http://creativecommons.org/ns#" >&copy; 2024 This work by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://ondra.hlavac.cz">Ondřej Hlaváč</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-ShareAlike 4.0 International</a></p> 
+              </div>
+            </div>
+          </footer>
+    </body>
+</html>

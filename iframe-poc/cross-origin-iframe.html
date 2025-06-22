@@ -1,0 +1,56 @@
+<html></html>
+    <head>
+        <title>INNER CONTENT - iframe testing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="provider-iframe-script.js"></script>
+        <script>
+            // Adds new lines to FAQ table to make the content longer and expand
+            // the vertical size of this page
+            document.addEventListener('DOMContentLoaded', function () {
+                const addQaItemButton = document.getElementById('add-qa-item');
+                const templateFaqItem = document.getElementById('template-faq-item');
+                addQaItemButton.addEventListener('click', function () {
+                    const newFaqItem = templateFaqItem.cloneNode(true);
+                    const newFaqItemDt = newFaqItem.querySelector('dt');
+                    const newFaqItemDd = newFaqItem.querySelector('dd');
+                    newFaqItemDt.textContent = 'New question?';
+                    newFaqItemDd.textContent = 'New answer, right? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum illum nobis quia tenetur perferendis id excepturi quisquam, eveniet consectetur non, blanditiis est quibusdam neque maxime labore magni! Facere, a culpa!';
+                    templateFaqItem.parentNode.insertBefore(newFaqItem, templateFaqItem);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <section class="bg-stone-200">
+
+            <div class="flex justify-center">
+                <div class="grid grid-cols-2 gap-x-1">
+                    <button id="add-qa-item" class="mt-12 mx-auto flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Add another Q&A item</button>
+                    <a href="cross-origin-iframe.html"  class="mt-12 mx-auto flex-none rounded-md px-3 py-2 text-sm font-semibold text-indigo-600 leading-6 ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Reload fresh page <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+            <div class="mx-auto max-w-7x1 divide-y divide-gray-900/10 px-6 py-8 lg:py-12 lg:px-8">
+                <h2 class="text-2xl font-bold leading-10 tracking-tight text-gray-900">Frequently asked questions</h2>
+                <dl class="mt-10 space-y-8 divide-y divide-gray-900/10">
+                    <div class="pt-8 lg:grid lg:grid-cols-12 lg:gap-8" id="template-faq-item">
+                        <dt class="text-base font-semibold leading-7 text-gray-900 lg:col-span-5">Some question?</dt>
+                        <dd class="mt-4 lg:col-span-7 lg:mt-0">
+                            <p class="text-base leading-7 text-gray-600">Some lengthy answer, right? Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Laborum illum nobis quia tenetur perferendis id excepturi
+                                quisquam, eveniet consectetur non, blanditiis est quibusdam neque maxime labore magni! Facere,
+                                a culpa!</p>
+                        </dd>
+                    </div>
+                    <!-- More questions here -->
+                </dl>
+            </div>
+        </section>
+        <section>
+            <footer class="text-center">
+                <p class="my-4 text-xs leading-5 text-gray-400 md:order-1 md:my-2">&bull; FYI, zde je konec obsahu iframe &bull;</p>
+            </footer>
+        </section>
+    </body>
+</html>
