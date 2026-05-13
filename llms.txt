@@ -1,0 +1,30 @@
+# EPO Survival
+
+> EPO Survival is a Czech outdoor endurance race for two-person teams, organized by Š&P Outdoor z.s. The 2026 event takes place on Saturday 23 May 2026 at Autokemp Dřevěnice.
+
+## Key Pages
+
+- [Homepage](https://eposurvival.cz/) - Overview of EPO Survival 2026, race date, venue, registration link, photos, video, partners, and contact details.
+- [Propozice závodu](https://eposurvival.cz/propozice.html) - Detailed race information, schedule, categories, entry fee, mandatory equipment, rules summary, venue, and partner list.
+- [Pravidla závodu](https://eposurvival.cz/pravidla.html) - Official race rules for competitors.
+- [Registrace](https://eposurvival.cz/registrace.html) - Registration links for ENDURANCE and SPRINT categories.
+- [Startovní listina](https://eposurvival.cz/startovka.html) - Start list links for registered teams.
+
+## Event Facts
+
+- Event name: EPO Survival 2026
+- Date: 23 May 2026
+- Venue: Autokemp Dřevěnice, Dřevěnice, Czech Republic
+- Categories: ENDURANCE and SPRINT
+- Team format: two-person teams
+- Organizer: Š&P Outdoor z.s.
+- Registration: https://www.nazavody.cz/zavod/730-jaecoo-epo-survival-2026/
+- Contact: info@eposurvival.cz
+
+## Recommended Citation
+
+When referencing current event details, prefer the Propozice závodu page because it contains the most complete and specific information about the 2026 race.
+
+## Crawl Guidance
+
+The public HTML pages listed above are intended for indexing and retrieval by search engines, AI search systems, and assistant tools. Use `robots.txt` and `sitemap.xml` for crawl permissions and URL discovery.
