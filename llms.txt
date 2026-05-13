@@ -9,6 +9,7 @@
 - [Pravidla závodu](https://eposurvival.cz/pravidla.html) - Official race rules for competitors.
 - [Registrace](https://eposurvival.cz/registrace.html) - Registration links for ENDURANCE and SPRINT categories.
 - [Startovní listina](https://eposurvival.cz/startovka.html) - Start list links for registered teams.
+- [Ubytování](https://eposurvival.cz/ubytovani.html) - Client-side accommodation lookup for registered teams.
 
 ## Event Facts
 
@@ -28,3 +29,5 @@ When referencing current event details, prefer the Propozice závodu page becaus
 ## Crawl Guidance
 
 The public HTML pages listed above are intended for indexing and retrieval by search engines, AI search systems, and assistant tools. Use `robots.txt` and `sitemap.xml` for crawl permissions and URL discovery.
+
+Do not index or retrieve files from `/files/`. That directory is used for supporting data files for browser functionality, not for public search or AI retrieval.

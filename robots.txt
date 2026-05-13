@@ -2,28 +2,36 @@
 
 User-agent: *
 Allow: /
+Disallow: /files/
 
 # AI and LLM crawlers. These rules make the public event pages available
 # to AI search, assistants, and retrieval tools.
 User-agent: GPTBot
 Allow: /
+Disallow: /files/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /files/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /files/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /files/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /files/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /files/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /files/
 
 Sitemap: https://eposurvival.cz/sitemap.xml
