@@ -72,16 +72,7 @@
 
       .ubytovani-form input {
         background: #fff;
-        border: 1px solid #dedede;
-        border-bottom: 3px solid #f08a24;
-        box-shadow: none;
         margin-bottom: 1rem;
-      }
-
-      .ubytovani-form input:focus {
-        border-color: #f08a24;
-        border-bottom-color: #cf6e0e;
-        box-shadow: 0 0 0 2px rgba(240, 138, 36, 0.18);
       }
 
       .ubytovani-results {
@@ -175,7 +166,9 @@
       <div class="row">
         <div class="medium-8 medium-centered columns">
           <form id="ubytovani-search-form" class="ubytovani-form">
-            <label for="ubytovani-search">Jméno nebo název týmu</label>
+            <label class="screen-reader-text" for="ubytovani-search"
+              >Jméno nebo název týmu</label
+            >
             <input
               id="ubytovani-search"
               type="search"

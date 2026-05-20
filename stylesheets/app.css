@@ -4214,6 +4214,17 @@ footer p {
   margin-bottom: 1.5rem;
 }
 
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .startovka-live {
   text-align: left;
 }
@@ -4224,20 +4235,31 @@ footer p {
   text-align: left;
 }
 
-.startovka-search-form label {
-  color: #3b454a;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .startovka-search-control {
   position: relative;
 }
 
+.startovka-search-control input,
+.ubytovani-form input[type="search"] {
+  border: 1px solid #b7c0c4;
+  border-radius: 999px;
+  box-shadow: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
 .startovka-search-control input {
   padding-right: 2.75rem;
+  margin-bottom: 0;
+}
+
+.startovka-search-control input:focus,
+.ubytovani-form input[type="search"]:focus {
+  border-color: #f08a24;
+  box-shadow: 0 0 0 3px rgba(240, 138, 36, 0.18);
+}
+
+.ubytovani-form input[type="search"] {
+  margin-bottom: 1rem;
 }
 
 .startovka-search-icon {
