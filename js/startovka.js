@@ -129,11 +129,10 @@
     var headerRow = document.createElement("tr");
     [
       "Tým",
-      "Klub",
-      "Kapitán",
-      "Druhý člen",
-      "Země",
       "Kategorie",
+      "Kapitán",
+      "Druhý závodník",
+      "Klub",
       "Zaplaceno",
     ].forEach(function (label) {
       appendText("th", null, label, headerRow);
@@ -145,11 +144,11 @@
     subrace.teams.forEach(function (team) {
       var row = document.createElement("tr");
       appendText("td", null, team.teamName || "-", row);
-      appendText("td", null, team.club || "-", row);
+      appendText("td", null, team.category || "-", row);
       renderRacerCell(team.captainName, team.captainCaesMembership, row);
       renderRacerCell(team.memberTwoName, team.memberTwoCaesMembership, row);
-      renderCountryCell(team, row);
-      appendText("td", null, team.category || "-", row);
+      // renderCountryCell(team, row); // todo: next year
+      appendText("td", null, team.club || "-", row);
       renderPaidCell(team, row);
       tbody.appendChild(row);
     });
