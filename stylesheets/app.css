@@ -4285,8 +4285,11 @@ footer p {
   display: inline-block;
   width: 1.45rem;
   height: auto;
-  margin-left: 0.35rem;
   vertical-align: -0.25rem;
+}
+
+.caes-cell .caes-icon {
+  margin-right: 0.35rem;
 }
 
 .caes-icon.caes-pending {

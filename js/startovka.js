@@ -75,21 +75,46 @@
     return null;
   }
 
-  function renderRacerCell(name, caesMembership, row) {
+  function createCaesIcon(caesMembership) {
+    var status = getCaesStatus(caesMembership);
+    if (!status) {
+      return null;
+    }
+
+    var icon = document.createElement("img");
+    icon.className = "caes-icon " + status.className;
+    icon.src = "images/caes-small-logo.png";
+    icon.alt = "ČAES";
+    icon.title = status.title;
+    return icon;
+  }
+
+  function renderRacerCell(name, row) {
     var cell = document.createElement("td");
     var racer = document.createElement("span");
     racer.className = "racer-name";
     racer.textContent = name || "-";
     cell.appendChild(racer);
+    row.appendChild(cell);
+  }
 
-    var status = getCaesStatus(caesMembership);
-    if (status) {
-      var icon = document.createElement("img");
-      icon.className = "caes-icon " + status.className;
-      icon.src = "images/caes-small-logo.png";
-      icon.alt = "ČAES";
-      icon.title = status.title;
-      cell.appendChild(icon);
+  function renderCaesCell(team, row) {
+    var cell = document.createElement("td");
+    cell.className = "caes-cell";
+
+    var captainIcon = createCaesIcon(team.captainCaesMembership);
+    var memberTwoIcon = createCaesIcon(team.memberTwoCaesMembership);
+
+    if (captainIcon) {
+      cell.appendChild(captainIcon);
+    }
+
+    if (memberTwoIcon) {
+      cell.appendChild(memberTwoIcon);
+    }
+
+    if (!captainIcon && !memberTwoIcon) {
+      cell.textContent = "-";
     }
 
     row.appendChild(cell);
@@ -106,6 +131,16 @@
     status.setAttribute("aria-label", status.title);
     cell.appendChild(status);
     row.appendChild(cell);
+  }
+
+  function formatCategory(category) {
+    var categories = {
+      men: "muži",
+      women: "ženy",
+      mix: "mix",
+    };
+
+    return categories[category] || category || "-";
   }
 
   function renderTable(subrace) {
@@ -132,6 +167,7 @@
       "Kategorie",
       "Kapitán",
       "Druhý závodník",
+      "ČAES",
       "Klub",
       "Zaplaceno",
     ].forEach(function (label) {
@@ -144,9 +180,10 @@
     subrace.teams.forEach(function (team) {
       var row = document.createElement("tr");
       appendText("td", null, team.teamName || "-", row);
-      appendText("td", null, team.category || "-", row);
-      renderRacerCell(team.captainName, team.captainCaesMembership, row);
-      renderRacerCell(team.memberTwoName, team.memberTwoCaesMembership, row);
+      appendText("td", null, formatCategory(team.category), row);
+      renderRacerCell(team.captainName, row);
+      renderRacerCell(team.memberTwoName, row);
+      renderCaesCell(team, row);
       // renderCountryCell(team, row); // todo: next year
       appendText("td", null, team.club || "-", row);
       renderPaidCell(team, row);
