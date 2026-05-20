@@ -31,3 +31,21 @@ $(document).on(
               $('.responsive-menu').toggleClass('expand');
           }
 );
+
+$(function() {
+  var $button = $('<button class="back-to-top" type="button" aria-label="Zpět nahoru" title="Zpět nahoru"><span class="fa fa-angle-up" aria-hidden="true"></span></button>');
+  $('body').append($button);
+
+  function updateBackToTop() {
+    $button.toggleClass('visible', $(window).scrollTop() > 500);
+  }
+
+  $button.on('click', function() {
+    $('html,body').animate({
+      scrollTop: 0
+    }, 600);
+  });
+
+  $(window).on('scroll', updateBackToTop);
+  updateBackToTop();
+});

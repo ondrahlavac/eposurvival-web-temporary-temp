@@ -5616,6 +5616,27 @@ footer p {
   text-align: left;
 }
 
+.startovka-quick-links {
+  margin-top: 1rem;
+}
+
+.startovka-quick-links a {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid #d2d8db;
+  border-radius: 999px;
+  color: #3b454a;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.startovka-quick-links a:hover {
+  border-color: #f08a24;
+  color: #f08a24;
+}
+
 .startovka-search-form {
   max-width: 28rem;
   margin: 0 auto 1.5rem;
@@ -5672,10 +5693,21 @@ footer p {
 
 .startovka-race {
   margin-top: 2rem;
+  scroll-margin-top: 1rem;
 }
 
 .startovka-race h4 {
   text-align: center;
+}
+
+.startovka-registration-note {
+  max-width: 42rem;
+  margin: 2rem auto 0;
+  text-align: center;
+}
+
+.startovka-registration-note a {
+  color: #f08a24;
 }
 
 .startovka-table-wrap {
@@ -5747,4 +5779,31 @@ footer p {
 .caes-icon.caes-pending {
   filter: grayscale(100%);
   opacity: 0.55;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: #f08a24;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: #cf6e0e;
 }

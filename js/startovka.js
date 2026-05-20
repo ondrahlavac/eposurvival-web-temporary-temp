@@ -206,9 +206,16 @@
     searchClear.disabled = !currentQuery;
   }
 
+  function getSubraceAnchor(subrace) {
+    return subrace.subraceName === "SPRINT"
+      ? "startovka-sprint"
+      : "startovka-endurance";
+  }
+
   function renderTable(subrace) {
     var section = document.createElement("div");
     section.className = "startovka-race";
+    section.id = getSubraceAnchor(subrace);
 
     appendText("h4", null, subrace.subraceName, section);
 
