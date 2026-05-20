@@ -86,51 +86,10 @@
     if (status) {
       var icon = document.createElement("img");
       icon.className = "caes-icon " + status.className;
-      icon.src = "images/partneri/logo-caes-bez_odkazu.svg";
+      icon.src = "images/caes-small-logo.png";
       icon.alt = "ČAES";
       icon.title = status.title;
       cell.appendChild(icon);
-    }
-
-    row.appendChild(cell);
-  }
-
-  function appendCaesIndicator(label, membership, parent) {
-    var status = getCaesStatus(membership);
-    if (!status) {
-      return false;
-    }
-
-    var item = document.createElement("span");
-    item.className = "caes-indicator";
-    item.title = label + ": " + status.title;
-
-    var text = document.createElement("span");
-    text.className = "caes-indicator-label";
-    text.textContent = label;
-    item.appendChild(text);
-
-    var icon = document.createElement("img");
-    icon.className = "caes-icon " + status.className;
-    icon.src = "images/partneri/logo-caes-bez_odkazu.svg";
-    icon.alt = "ČAES";
-    item.appendChild(icon);
-
-    parent.appendChild(item);
-    return true;
-  }
-
-  function renderCaesCell(team, row) {
-    var cell = document.createElement("td");
-    var hasCaptain = appendCaesIndicator("K", team.captainCaesMembership, cell);
-    var hasMemberTwo = appendCaesIndicator(
-      "2",
-      team.memberTwoCaesMembership,
-      cell,
-    );
-
-    if (!hasCaptain && !hasMemberTwo) {
-      cell.textContent = "-";
     }
 
     row.appendChild(cell);
@@ -173,7 +132,6 @@
       "Klub",
       "Kapitán",
       "Druhý člen",
-      "ČAES",
       "Země",
       "Kategorie",
       "Zaplaceno",
@@ -190,7 +148,6 @@
       appendText("td", null, team.club || "-", row);
       renderRacerCell(team.captainName, team.captainCaesMembership, row);
       renderRacerCell(team.memberTwoName, team.memberTwoCaesMembership, row);
-      renderCaesCell(team, row);
       renderCountryCell(team, row);
       appendText("td", null, team.category || "-", row);
       renderPaidCell(team, row);

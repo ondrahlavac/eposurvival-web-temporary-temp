@@ -4293,21 +4293,3 @@ footer p {
   filter: grayscale(100%);
   opacity: 0.55;
 }
-
-.caes-indicator {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 0.5rem;
-  white-space: nowrap;
-}
-
-.caes-indicator-label {
-  color: #75848b;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.7rem;
-  font-weight: 700;
-}
-
-.caes-indicator .caes-icon {
-  margin-left: 0.2rem;
-}
