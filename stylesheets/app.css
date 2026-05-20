@@ -4218,6 +4218,46 @@ footer p {
   text-align: left;
 }
 
+.startovka-search-form {
+  max-width: 28rem;
+  margin: 0 auto 1.5rem;
+  text-align: left;
+}
+
+.startovka-search-form label {
+  color: #3b454a;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.startovka-search-control {
+  position: relative;
+}
+
+.startovka-search-control input {
+  padding-right: 2.75rem;
+}
+
+.startovka-search-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #75848b;
+  background: transparent;
+  cursor: pointer;
+}
+
+.startovka-search-icon:disabled {
+  cursor: default;
+}
+
 .startovka-race {
   margin-top: 2rem;
 }

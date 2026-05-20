@@ -1,6 +1,11 @@
 (function () {
   var apiUrl = "/api/startovka";
   var root = document.getElementById("startovka-live");
+  var searchForm = document.getElementById("startovka-search-form");
+  var searchInput = document.getElementById("startovka-search");
+  var searchClear = document.getElementById("startovka-search-clear");
+  var startListData = null;
+  var currentQuery = "";
 
   function clear(element) {
     while (element.firstChild) {
@@ -16,6 +21,14 @@
     element.textContent = text;
     parent.appendChild(element);
     return element;
+  }
+
+  function normalize(value) {
+    return String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
   }
 
   function renderStatus(message, className) {
@@ -143,6 +156,56 @@
     return categories[category] || category || "-";
   }
 
+  function getTeamSearchText(team) {
+    return normalize(
+      [
+        team.teamName,
+        team.club,
+        team.captainName,
+        team.memberTwoName,
+        team.country,
+        team.category,
+        formatCategory(team.category),
+      ].join(" ")
+    );
+  }
+
+  function filterSubrace(subrace, query) {
+    if (!query) {
+      return subrace;
+    }
+
+    return {
+      subraceId: subrace.subraceId,
+      subraceName: subrace.subraceName,
+      teams: subrace.teams.filter(function (team) {
+        return getTeamSearchText(team).indexOf(query) !== -1;
+      }),
+    };
+  }
+
+  function getFilteredData(data) {
+    var query = normalize(currentQuery);
+
+    return {
+      subraces: {
+        endurance: filterSubrace(data.subraces.endurance, query),
+        sprint: filterSubrace(data.subraces.sprint, query),
+      },
+    };
+  }
+
+  function updateSearchIcon() {
+    if (!searchClear) {
+      return;
+    }
+
+    searchClear.innerHTML = currentQuery
+      ? '<span class="fa fa-times-circle" aria-hidden="true"></span>'
+      : '<span class="fa fa-search" aria-hidden="true"></span>';
+    searchClear.disabled = !currentQuery;
+  }
+
   function renderTable(subrace) {
     var section = document.createElement("div");
     section.className = "startovka-race";
@@ -198,14 +261,47 @@
 
   function renderStartLists(data) {
     clear(root);
-    root.appendChild(renderTable(data.subraces.endurance));
-    root.appendChild(renderTable(data.subraces.sprint));
+    var filteredData = getFilteredData(data);
+    root.appendChild(renderTable(filteredData.subraces.endurance));
+    root.appendChild(renderTable(filteredData.subraces.sprint));
   }
 
   if (!root) {
     return;
   }
 
+  if (searchForm && searchInput) {
+    searchForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+    });
+
+    searchInput.addEventListener("input", function () {
+      currentQuery = searchInput.value;
+      updateSearchIcon();
+      if (startListData) {
+        renderStartLists(startListData);
+      }
+    });
+  }
+
+  if (searchClear && searchInput) {
+    searchClear.addEventListener("click", function () {
+      if (!currentQuery) {
+        searchInput.focus();
+        return;
+      }
+
+      searchInput.value = "";
+      currentQuery = "";
+      updateSearchIcon();
+      searchInput.focus();
+      if (startListData) {
+        renderStartLists(startListData);
+      }
+    });
+  }
+
+  updateSearchIcon();
   renderStatus("Načítám startovní listinu...", "lead");
 
   fetch(apiUrl, { cache: "no-cache" })
@@ -215,7 +311,10 @@
       }
       return response.json();
     })
-    .then(renderStartLists)
+    .then(function (data) {
+      startListData = data;
+      renderStartLists(startListData);
+    })
     .catch(function () {
       renderStatus(
         "Startovní listina se teď nepodařila načíst. Zkuste to prosím později.",
