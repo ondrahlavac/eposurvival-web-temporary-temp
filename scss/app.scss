@@ -43,6 +43,10 @@
 $main-color: #ff794a;
 $subsidiary-color: #ffdf8f;
 
+.registration-hidden {
+  display: none !important;
+}
+
 // Transform text to uppercase on h1-h6 headers and buttons
 h1, h2, h3, h4, h5, h6,
 .button {

@@ -138,6 +138,10 @@ img {
   visibility: hidden;
 }
 
+.registration-hidden {
+  display: none !important;
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
