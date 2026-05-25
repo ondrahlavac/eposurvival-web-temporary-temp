@@ -147,7 +147,22 @@
     <section class="section survey-section">
       <div class="row">
         <div class="medium-10 medium-centered columns">
-          <form class="survey-form" action="#" method="post">
+          <form
+            class="survey-form"
+            action="/api/pozavodni-anketa"
+            method="post"
+          >
+            <div class="survey-honeypot" aria-hidden="true">
+              <label>
+                Web
+                <input
+                  type="text"
+                  name="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </label>
+            </div>
             <fieldset class="survey-panel">
               <legend>Před závodem</legend>
               <div class="rating-list">
@@ -162,10 +177,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="info-pred">8</output>
+                    <output for="info-pred">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="info_pred_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
                 <div class="rating-item">
                   <label for="registracni-system">Registrační systém</label>
@@ -180,10 +200,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="registracni-system">8</output>
+                    <output for="registracni-system">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="registracni_system_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
               </div>
             </fieldset>
@@ -205,10 +230,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="kancelar">8</output>
+                    <output for="kancelar">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="kancelar_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
                 <div class="rating-item">
                   <label for="info-misto">Informační servis na místě</label>
@@ -224,10 +254,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="info-misto">8</output>
+                    <output for="info-misto">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="info_misto_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
                 <div class="rating-item">
                   <label for="ubytovani">Ubytování a související služby</label>
@@ -243,10 +278,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="ubytovani">8</output>
+                    <output for="ubytovani">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="ubytovani_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
                 <div class="rating-item">
                   <label for="doprovodne-sluzby">Doprovodné služby</label>
@@ -262,10 +302,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="doprovodne-sluzby">8</output>
+                    <output for="doprovodne-sluzby">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="doprovodne_sluzby_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
               </div>
             </fieldset>
@@ -287,10 +332,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="9"
+                      value="7"
                     />
-                    <output for="zavod-celkove">9</output>
+                    <output for="zavod-celkove">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="zavod_celkove_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
                 <div class="rating-item">
                   <label for="discipliny">Disciplíny</label>
@@ -306,10 +356,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="9"
+                      value="7"
                     />
-                    <output for="discipliny">9</output>
+                    <output for="discipliny">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="discipliny_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
                 <div class="rating-item">
                   <label for="mapy-trat"
@@ -327,10 +382,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="mapy-trat">8</output>
+                    <output for="mapy-trat">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="mapy_trat_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
                 <div class="rating-item">
                   <label for="bezpecnost"
@@ -348,10 +408,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="9"
+                      value="7"
                     />
-                    <output for="bezpecnost">9</output>
+                    <output for="bezpecnost">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="bezpecnost_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
               </div>
             </fieldset>
@@ -373,10 +438,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="vysledky">8</output>
+                    <output for="vysledky">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="vysledky_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
                 <div class="rating-item">
                   <label for="program">Doprovodný program</label>
@@ -392,10 +462,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="program">8</output>
+                    <output for="program">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="program_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
                 <div class="rating-item">
                   <label for="vyhlaseni">Vyhlášení výsledků</label>
@@ -408,10 +483,15 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="8"
+                      value="7"
                     />
-                    <output for="vyhlaseni">8</output>
+                    <output for="vyhlaseni">7</output>
                   </div>
+                  <textarea
+                    class="rating-note"
+                    name="vyhlaseni_poznamka"
+                    rows="1"
+                  ></textarea>
                 </div>
               </div>
             </fieldset>
@@ -432,9 +512,9 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="9"
+                      value="7"
                     />
-                    <output for="dojem">9</output>
+                    <output for="dojem">7</output>
                   </div>
                 </div>
                 <div class="rating-item">
@@ -448,9 +528,9 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="9"
+                      value="7"
                     />
-                    <output for="znovu">9</output>
+                    <output for="znovu">7</output>
                   </div>
                 </div>
                 <div class="rating-item">
@@ -469,9 +549,9 @@
                       type="range"
                       min="1"
                       max="10"
-                      value="9"
+                      value="7"
                     />
-                    <output for="doporuceni">9</output>
+                    <output for="doporuceni">7</output>
                   </div>
                 </div>
               </div>
@@ -508,13 +588,10 @@
             </fieldset>
 
             <div class="survey-actions">
-              <button class="radius button" type="button" disabled>
-                Odesílání připravujeme
+              <button class="radius button" type="submit">
+                Odeslat anketu
               </button>
-              <p>
-                Formulář je zatím pouze grafický návrh. Data se nikam
-                neposílají.
-              </p>
+              <p class="survey-status" role="status" aria-live="polite"></p>
             </div>
           </form>
         </div>
@@ -550,9 +627,69 @@
     <script src="js/app.js"></script>
     <script>
       (function () {
+        var form = document.querySelector(".survey-form");
         var ranges = document.querySelectorAll(
           ".survey-form input[type='range']",
         );
+        var ratingNotes = document.querySelectorAll(
+          ".survey-form .rating-note",
+        );
+        var submitButton = form && form.querySelector("button[type='submit']");
+        var status = form && form.querySelector(".survey-status");
+        var browserIdKey = "epo_survival_survey_browser_id";
+
+        function getBrowserId() {
+          var existing = "";
+
+          try {
+            existing = localStorage.getItem(browserIdKey) || "";
+          } catch (error) {
+            existing = "";
+          }
+
+          if (existing) {
+            return existing;
+          }
+
+          var generated =
+            "browser_" +
+            Date.now().toString(36) +
+            "_" +
+            Math.random().toString(36).slice(2, 12);
+
+          try {
+            localStorage.setItem(browserIdKey, generated);
+          } catch (error) {}
+
+          return generated;
+        }
+
+        function setStatus(message, type) {
+          if (!status) {
+            return;
+          }
+
+          status.textContent = message;
+          status.className = "survey-status";
+
+          if (type) {
+            status.className += " " + type;
+          }
+        }
+
+        function getFormPayload() {
+          var data = new FormData(form);
+          var payload = {
+            browser_id: getBrowserId(),
+          };
+
+          data.forEach(function (value, key) {
+            payload[key] = value;
+          });
+
+          return payload;
+        }
+
         Array.prototype.forEach.call(ranges, function (range) {
           var output = range.parentNode.querySelector("output");
           var update = function () {
@@ -569,6 +706,65 @@
           range.addEventListener("input", update);
           update();
         });
+
+        Array.prototype.forEach.call(ratingNotes, function (textarea) {
+          var minHeight = 48;
+          var maxHeight = 112;
+          var resize = function () {
+            textarea.style.height = minHeight + "px";
+
+            if (textarea.value) {
+              textarea.style.height =
+                Math.min(textarea.scrollHeight, maxHeight) + "px";
+            }
+          };
+
+          textarea.addEventListener("input", resize);
+          resize();
+        });
+
+        if (form) {
+          form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (submitButton) {
+              submitButton.disabled = true;
+              submitButton.textContent = "Odesílám...";
+            }
+
+            setStatus("Odesíláme anketu.", "is-loading");
+
+            fetch(form.action, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(getFormPayload()),
+            })
+              .then(function (response) {
+                if (!response.ok) {
+                  throw new Error("Odeslání se nezdařilo.");
+                }
+
+                return response.json();
+              })
+              .then(function () {
+                setStatus("Děkujeme, anketa byla odeslána.", "is-success");
+                form.classList.add("survey-submitted");
+              })
+              .catch(function () {
+                setStatus(
+                  "Odeslání se nepodařilo. Zkuste to prosím znovu později.",
+                  "is-error",
+                );
+
+                if (submitButton) {
+                  submitButton.disabled = false;
+                  submitButton.textContent = "Odeslat anketu";
+                }
+              });
+          });
+        }
       })();
     </script>
   </body>

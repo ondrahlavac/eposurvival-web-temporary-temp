@@ -5850,6 +5850,14 @@ footer p {
   text-align: left;
 }
 
+.survey-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .survey-panel {
   margin: 0 0 1.5rem;
   padding: 1.25rem;
@@ -5934,6 +5942,20 @@ footer p {
   grid-template-columns: auto minmax(0, 1fr) 3rem;
   align-items: center;
   gap: 0.75rem;
+}
+
+.survey-form .rating-note {
+  height: 3rem;
+  min-height: 3rem;
+  max-height: 7rem;
+  margin-top: 0.85rem;
+  margin-bottom: 0;
+  font-family:
+    "Muli", "Source Sans Pro", "Lucida Grande", Tahoma, Verdana, Arial,
+    sans-serif;
+  font-weight: normal;
+  line-height: 1.35;
+  overflow-y: hidden;
 }
 
 .range-row span {
@@ -6022,6 +6044,28 @@ footer p {
 .survey-actions p {
   margin-top: 0.75rem;
   color: #75848b;
+}
+
+.survey-status {
+  min-height: 1.5rem;
+}
+
+.survey-status.is-success {
+  color: #31945b;
+  font-weight: 700;
+}
+
+.survey-status.is-error {
+  color: #cf2a0e;
+  font-weight: 700;
+}
+
+.survey-status.is-loading {
+  color: #75848b;
+}
+
+.survey-submitted .survey-panel {
+  opacity: 0.72;
 }
 
 @media only screen and (min-width: 40.063em) {
