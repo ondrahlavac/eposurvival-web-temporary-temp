@@ -5202,7 +5202,7 @@ h6,
   inset: -20px;
   z-index: 0;
   background-image: var(--hero-image);
-  background-position: top;
+  background-position: center;
   background-size: cover;
   filter: blur(10px);
   transform: scale(1.03);
