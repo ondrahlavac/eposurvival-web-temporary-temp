@@ -558,6 +558,33 @@
             </fieldset>
 
             <fieldset class="survey-panel">
+              <legend>Doporučení</legend>
+              <div class="survey-grid survey-grid-2">
+                <label>
+                  Odkud jste se o závodě dozvěděli?
+                  <select name="zdroj">
+                    <option value="">Vyberte možnost</option>
+                    <option value="jezdim_opakovane">Jezdím EPO Survival opakovaně</option>
+                    <option value="kamaradi">Od kamarádů / známých</option>
+                    <option value="oddil">Z oddílu nebo sportovní komunity</option>
+                    <option value="jiny_zavod">Na jiném závodě</option>
+                    <option value="facebook">Facebook / sociální sítě</option>
+                    <option value="web">Web / vyhledávač</option>
+                    <option value="jine">Jiné</option>
+                  </select>
+                </label>
+                <label>
+                  Chcete doplnit konkrétně odkud?
+                  <input
+                    type="text"
+                    name="zdroj_detail"
+                    placeholder="Např. název závodu, oddílu, skupiny nebo webu"
+                  />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="survey-panel">
               <legend>Slovní zpětná vazba</legend>
               <div class="survey-grid survey-grid-2">
                 <label>
@@ -638,6 +665,10 @@
         var status = form && form.querySelector(".survey-status");
         var browserIdKey = "epo_survival_survey_browser_id";
 
+        if (form) {
+          form.classList.add("notes-enhanced");
+        }
+
         function getBrowserId() {
           var existing = "";
 
@@ -708,6 +739,7 @@
         });
 
         Array.prototype.forEach.call(ratingNotes, function (textarea) {
+          var toggle = document.createElement("button");
           var minHeight = 48;
           var maxHeight = 112;
           var resize = function () {
@@ -718,6 +750,19 @@
                 Math.min(textarea.scrollHeight, maxHeight) + "px";
             }
           };
+
+          toggle.type = "button";
+          toggle.className = "rating-note-toggle";
+          toggle.innerHTML =
+            '<span class="fa fa-comment-o" aria-hidden="true"></span><span>Doplnit poznámku</span>';
+          textarea.parentNode.insertBefore(toggle, textarea);
+
+          toggle.addEventListener("click", function () {
+            textarea.classList.add("is-visible");
+            toggle.style.display = "none";
+            resize();
+            textarea.focus();
+          });
 
           textarea.addEventListener("input", resize);
           resize();

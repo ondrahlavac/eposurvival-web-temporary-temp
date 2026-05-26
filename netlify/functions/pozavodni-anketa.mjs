@@ -24,6 +24,8 @@ const RATING_FIELDS = [
   "doporuceni",
 ];
 
+const SOURCE_FIELDS = ["zdroj", "zdroj_detail"];
+
 const TEXT_FIELDS = [
   "info_pred_poznamka",
   "registracni_system_poznamka",
@@ -167,6 +169,8 @@ function sanitizePayload(payload) {
     cleaned[field] = sanitizeText(payload[field], 4000);
   });
 
+  cleaned.zdroj = sanitizeText(payload.zdroj, 80);
+  cleaned.zdroj_detail = sanitizeText(payload.zdroj_detail, 500);
   cleaned.browser_id = sanitizeBrowserId(payload.browser_id);
   cleaned.honeypot = sanitizeText(payload.website, 200);
 
@@ -181,6 +185,11 @@ function buildRow(cleaned, metadata) {
     metadata.browserId,
     metadata.language,
   ]
+    .concat(
+      SOURCE_FIELDS.map(function (field) {
+        return cleaned[field];
+      })
+    )
     .concat(
       RATING_FIELDS.map(function (field) {
         return cleaned[field];
