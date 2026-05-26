@@ -113,6 +113,18 @@ h6,
   --hero-image: url("/images/hero-image-field-2026.jpg");
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: rem-calc(16 28);
+  margin-top: rem-calc(4);
+
+  .button {
+    margin-bottom: 0;
+  }
+}
+
 // Add shadow effects on the buttons
 .button {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
@@ -169,6 +181,7 @@ textarea {
       border-radius: $global-rounded;
     }
     span {
+      display: none;
       float: left;
       margin: rem-calc(11 0 0 10);
       font-size: rem-calc(18);
@@ -176,6 +189,18 @@ textarea {
       font-weight: 700;
       text-transform: uppercase;
       color: $header-font-color;
+    }
+  }
+
+  @media only screen and (max-width: 639px) {
+    .logo span {
+      display: inherit;
+    }
+  }
+
+  @media only screen and (min-width: 880px) {
+    .logo span {
+      display: inherit;
     }
   }
 

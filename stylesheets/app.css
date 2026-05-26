@@ -5224,6 +5224,17 @@ h6,
   --hero-image: url("/images/hero-image-field-2026.jpg");
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.75rem;
+  margin-top: 0.25rem;
+}
+.hero-actions .button {
+  margin-bottom: 0;
+}
+
 .button {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
   box-shadow:
@@ -5284,6 +5295,11 @@ textarea {
   color: #384047;
 }
 @media only screen and (min-width: 880px) {
+  .header .logo span {
+    display: inherit;
+  }
+}
+@media only screen and (max-width: 639px) {
   .header .logo span {
     display: inherit;
   }
