@@ -5187,26 +5187,41 @@ h6,
 }
 
 .hero-photo-bg {
-  background-image: url("/images/hero-image.jpg");
-  /*background-position: center;*/
-  background-position: top;
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image: none;
   text-shadow:
     0 0 1px black,
     0 0 10px black,
     0 0 5px black;
 }
+.hero-photo-bg:before {
+  position: absolute;
+  content: "";
+  inset: -20px;
+  z-index: 0;
+  background-image: var(--hero-image);
+  background-position: top;
+  background-size: cover;
+  filter: blur(10px);
+  transform: scale(1.03);
+}
+.hero-photo-bg > * {
+  position: relative;
+  z-index: 1;
+}
 .hero-photo-bg.hero-night {
-  background-image: url("/images/hero-image-night.jpg");
+  --hero-image: url("/images/hero-image-night.jpg");
 }
 .hero-photo-bg.hero-forest {
-  background-image: url("/images/hero-image-forest.jpg");
+  --hero-image: url("/images/hero-image-forest.jpg");
 }
 .hero-photo-bg.hero-sunset {
-  background-image: url("/images/hero-image-sunset.jpg");
+  --hero-image: url("/images/hero-image-sunset.jpg");
 }
 .hero-photo-bg.hero-field {
-  background-image: url("/images/hero-image-field-2026.jpg");
+  --hero-image: url("/images/hero-image-field-2026.jpg");
 }
 
 .button {

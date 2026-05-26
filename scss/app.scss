@@ -60,6 +60,50 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+.hero-photo-bg {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image: none;
+  text-shadow:
+    0 0 1px black,
+    0 0 10px black,
+    0 0 5px black;
+
+  &:before {
+    position: absolute;
+    content: "";
+    inset: -20px;
+    z-index: 0;
+    background-image: var(--hero-image);
+    background-position: top;
+    background-size: cover;
+    filter: blur(10px);
+    transform: scale(1.03);
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.hero-photo-bg.hero-night {
+  --hero-image: url("/images/hero-image-night.jpg");
+}
+
+.hero-photo-bg.hero-forest {
+  --hero-image: url("/images/hero-image-forest.jpg");
+}
+
+.hero-photo-bg.hero-sunset {
+  --hero-image: url("/images/hero-image-sunset.jpg");
+}
+
+.hero-photo-bg.hero-field {
+  --hero-image: url("/images/hero-image-field-2026.jpg");
+}
+
 // Add shadow effects on the buttons
 .button {
   text-shadow: 0 1px 0 rgba(0,0,0,.2);
