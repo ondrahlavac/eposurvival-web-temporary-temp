@@ -590,8 +590,9 @@ footer {
   align-items: center;
   gap: 0.4rem;
   margin-top: 0.75rem;
-  padding: 0;
-  border: 0;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
   color: #f08a24;
   background: transparent;
   font-family: "Montserrat", sans-serif;
@@ -603,7 +604,9 @@ footer {
 
 .rating-note-toggle:hover,
 .rating-note-toggle:focus {
+  border-color: #f08a24;
   color: #cf6e0e;
+  background: rgba(240, 138, 36, 0.06);
   outline: none;
 }
 
