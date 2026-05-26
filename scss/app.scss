@@ -577,6 +577,36 @@ footer {
   overflow-y: hidden;
 }
 
+.survey-form.notes-enhanced .rating-note {
+  display: none;
+}
+
+.survey-form.notes-enhanced .rating-note.is-visible {
+  display: block;
+}
+
+.rating-note-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0;
+  border: 0;
+  color: #f08a24;
+  background: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.rating-note-toggle:hover,
+.rating-note-toggle:focus {
+  color: #cf6e0e;
+  outline: none;
+}
+
 .range-row span {
   color: #8c989e;
   font-family: "Montserrat", sans-serif;
