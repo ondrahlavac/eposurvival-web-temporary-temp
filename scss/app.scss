@@ -138,6 +138,13 @@ input[type="text"], input[type="email"], textarea {
     height: rem-calc(40);
     font-size: rem-calc(14);
     line-height: 1;
+    background-color: #ff794a;
+    border-color: #e95f2f;
+
+    &:hover,
+    &:focus {
+      background-color: #e95f2f;
+    }
   }
 }
 
@@ -435,6 +442,10 @@ footer {
     float: right;
     margin: 0;
   }
+}
+
+.back-to-top {
+  padding: 0;
 }
 
 // Post-race survey

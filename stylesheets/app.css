@@ -5205,6 +5205,9 @@ h6,
 .hero-photo-bg.hero-sunset {
   background-image: url("/images/hero-image-sunset.jpg");
 }
+.hero-photo-bg.hero-field {
+  background-image: url("/images/hero-image-field-2026.jpg");
+}
 
 .button {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
@@ -5283,6 +5286,12 @@ textarea {
   height: 2.5rem;
   font-size: 0.875rem;
   line-height: 1;
+  background-color: #ff794a;
+  border-color: #e95f2f;
+}
+.header .button:hover,
+.header .button:focus {
+  background-color: #e95f2f;
 }
 .header .text-link {
   margin: 0.8125rem 0 0.8125rem 1.5625rem;
@@ -5799,6 +5808,7 @@ footer p {
   z-index: 1000;
   width: 2.75rem;
   height: 2.75rem;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   color: #fff;
@@ -5807,7 +5817,9 @@ footer p {
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, background 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
 }
 
 .back-to-top.visible {
@@ -6027,7 +6039,8 @@ footer p {
   height: 0.75rem;
   border-radius: 999px;
   background:
-    linear-gradient(#93cd7e, #93cd7e) 0 / var(--range-progress, 80%) 100% no-repeat,
+    linear-gradient(#93cd7e, #93cd7e) 0 / var(--range-progress, 80%) 100%
+      no-repeat,
     #e2e8eb;
 }
 
