@@ -1,4 +1,4 @@
-const RACE_ID = "730";
+const RACE_ID = "833";
 const START_LISTS_URL =
   "https://www.nazavody.cz/public-api/v1/race/" + RACE_ID + "/start-lists";
 
