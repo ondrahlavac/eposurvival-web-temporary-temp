@@ -71,14 +71,19 @@
   }
 
   function getCaesStatus(value) {
-    if (value === "Je členem ČAES") {
+    var normalizedValue = normalize(value);
+
+    if (/^(je )?clen(em)? caes$/.test(normalizedValue)) {
       return {
         className: "caes-member",
         title: "Je členem ČAES",
       };
     }
 
-    if (value === "Není členem ČAES a chce se stát [ zdarma ]") {
+    if (
+      /(neni|nejsem) clen(em)? caes/.test(normalizedValue) &&
+      normalizedValue.indexOf("nechce") === -1
+    ) {
       return {
         className: "caes-pending",
         title: "Stane se členem ČAES v den závodu",

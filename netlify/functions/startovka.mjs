@@ -91,7 +91,7 @@ function getCaesMembership(form, matcher) {
     var label = getLabelText(formItem);
     return (
       formItem.value &&
-      label.indexOf("caes clenstvi") !== -1 &&
+      label.indexOf("caes") !== -1 &&
       matcher(label)
     );
   });
@@ -99,13 +99,17 @@ function getCaesMembership(form, matcher) {
 
 function getCaptainCaesMembership(form) {
   return getCaesMembership(form, function (label) {
-    return /kapitan|captain/.test(label);
+    return /kapitan|captain|zavodnik 1|clen 1|1\. zavodnik|1\. clen|prvni zavodnik/.test(
+      label
+    );
   });
 }
 
 function getMemberTwoCaesMembership(form) {
   return getCaesMembership(form, function (label) {
-    return /2\. zavodnik|2\. clen|member 2/.test(label);
+    return /zavodnik 2|clen 2|2\. zavodnik|2\. clen|member 2|druhy zavodnik/.test(
+      label
+    );
   });
 }
 
