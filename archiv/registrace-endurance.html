@@ -1,14 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-MXJ3J7R"></script>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-NR3NKX');</script>
-  <!-- End Google Tag Manager -->
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,16 +27,12 @@
   <meta name="twitter:image" content="https://eposurvival.cz/images/ogimage-eposurvival-2026.jpg">
   <meta name="twitter:image:alt" content="EPO Survival">
 
-  <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
   <link href='//fonts.googleapis.com/css?family=Muli:400,400italic|Montserrat:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
-  <script src="js/vendor/modernizr.js"></script>
+  <link rel="stylesheet" href="/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+  <script src="/js/vendor/modernizr.js"></script>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NR3NKX"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <header class="header">
   <div class="row">
     <div class="small-12 columns">
@@ -97,7 +85,7 @@
       <div class="medium-10 medium-centered columns text-center">
         <h3>Registrace na závod ENDURANCE</h3>
         <p class="lead"></p>
-        <iframe src="//www.sportt.cz/register/1383" style="border:none" width="100%" height="700px"></iframe>
+        <a class="radius button" href="https://www.sportt.cz/register/1383">Otevřít registraci na externím webu sportt.cz</a>
       </div>
     </div>
   </section>
@@ -285,28 +273,53 @@
 -->
   </section>
 
-  <footer>
-    <div class="row">
-      <div class="medium-6 medium-push-6 columns">
-        <ul class="social">
-          <li><a href="//fb.me/eposurvival"><i class="fa fa-facebook fa-lg"></i></a></li>
-          <li><a href="//vimeo.com/sapoutdoor"><i class="fa fa-vimeo-square fa-lg"></i></a></li>
-        </ul>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-grid">
+        <nav class="site-footer-column" aria-label="Závod">
+          <h2>Závod</h2>
+          <a href="/#zakladni-info">O závodě</a>
+          <a href="/propozice.html">Propozice</a>
+          <a href="/pravidla.html">Pravidla</a>
+          <a href="https://www.nazavody.cz/zavod/833-epo-survival-2027/">Registrace <span aria-hidden="true">↗</span></a>
+        </nav>
+        <nav class="site-footer-column" aria-label="Informace">
+          <h2>Informace</h2>
+          <a href="/startovka.html">Startovní listina</a>
+          <a href="https://docs.google.com/spreadsheets/d/1XeiVMuTLHs0e_D13Dv2crCt7SFKOVUmv/edit?usp=sharing&amp;ouid=107312076527438348862&amp;rtpof=true&amp;sd=true">Výsledky 2026</a>
+          <a href="/ubytovani.html">Ubytování</a>
+        </nav>
+        <div class="site-footer-column">
+          <h2>Kontakt</h2>
+          <a href="mailto:info@eposurvival.cz">info@eposurvival.cz</a>
+          <a href="https://m.me/eposurvival">Napište nám na Messenger</a>
+          <a class="site-footer-organizer" href="https://sapoutdoor.cz/">Š&amp;P Outdoor, z. s.</a>
+        </div>
+        <div class="site-footer-column">
+          <h2>Sledujte nás</h2>
+          <div class="site-footer-socials">
+            <a href="https://www.facebook.com/eposurvival/">
+              <i class="fa fa-facebook" aria-hidden="true"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/eposurvivalcz/">
+              <i class="fa fa-instagram" aria-hidden="true"></i> Instagram
+            </a>
+            <a href="https://vimeo.com/sapoutdoor">
+              <i class="fa fa-vimeo-square" aria-hidden="true"></i> Vimeo
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="medium-6 medium-pull-6 columns">
-        <p class="copyright">EPO Survival by Š&P Outdoor. &copy; 2027 - Všechna práva vyhrazena.</p>
+      <div class="site-footer-bottom">
+        <p>&copy; 2027 Š&amp;P Outdoor, z. s. <span>Všechna práva vyhrazena.</span></p>
+        <a href="/cookies.html">Cookies</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/foundation.min.js"></script>
-  <script src="js/jquery.counterup.min.js"></script>
-  <script src="js/app.js"></script>
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-30535667-5', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="//www.google-analytics.com/analytics.js" async></script>
+  <script src="/js/vendor/jquery.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/jquery.counterup.min.js"></script>
+  <script src="/js/app.js"></script>
 </body>
 </html>
