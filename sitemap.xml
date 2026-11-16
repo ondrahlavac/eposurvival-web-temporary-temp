@@ -39,6 +39,11 @@
     <priority>0.50</priority>
   </url>
   <url>
+    <loc>https://eposurvival.cz/cookies.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <priority>0.30</priority>
+  </url>
+  <url>
     <loc>https://eposurvival.cz/llms.txt</loc>
     <lastmod>2026-05-13</lastmod>
     <priority>0.30</priority>
