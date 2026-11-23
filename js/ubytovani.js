@@ -1,5 +1,5 @@
 (function () {
-  var dataUrl = "files/2026-ubytovane-tymy.json";
+  var dataUrl = "/files/2027-ubytovane-tymy.json";
   var form = document.getElementById("ubytovani-search-form");
   var input = document.getElementById("ubytovani-search");
   var results = document.getElementById("ubytovani-results");
@@ -114,6 +114,11 @@
 
     loadTeams()
       .then(function () {
+        if (!teams.length) {
+          renderStatus("Seznam ubytovaných týmů pro rok 2027 zatím není zveřejněný.");
+          return;
+        }
+
         var matches = findTeams(query);
         if (matches.length) {
           renderMatches(matches);

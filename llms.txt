@@ -10,7 +10,9 @@
 - [Registrace](https://eposurvival.cz/registrace.html) - Registration links for ENDURANCE and SPRINT categories.
 - [Startovní listina](https://eposurvival.cz/startovka.html) - Start list links for registered teams.
 - [Ubytování](https://eposurvival.cz/ubytovani.html) - Client-side accommodation lookup for registered teams.
+- [Pořadatel a provozovatel](https://eposurvival.cz/poradatel.html) - Organizer and website operator details, contact information, registration terms, complaints, and dispute resolution.
 - [Cookies](https://eposurvival.cz/cookies.html) - Cookie-free website, external registration, and local storage used by the post-race survey.
+- [Ochrana osobních údajů](https://eposurvival.cz/ochrana-osobnich-udaju.html) - Privacy information for participants and visitors: NaZávody.cz registration, ČAES, public lists, photos, accommodation, post-race survey, retention, and GDPR rights.
 
 ## Event Facts
 
